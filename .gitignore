@@ -9,4 +9,5 @@
 /Logs
 /UserSettings
 /Temp
-
+/obj
+*.csproj

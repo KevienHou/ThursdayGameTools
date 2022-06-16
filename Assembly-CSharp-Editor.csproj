@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ThirdComponent\ThursdayTool\PathCopyer\Editor\PathCopyer.cs" />
+    <Compile Include="Assets\ThirdComponent\ThursdayTool\TransHandle\Editor\TransHandle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
