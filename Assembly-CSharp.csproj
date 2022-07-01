@@ -61,6 +61,7 @@
     <Compile Include="Assets\ThirdComponent\ThursdayTool\UI\Custem\Btn\Scripts\UI_BtnGroup.cs" />
     <Compile Include="Assets\ThirdComponent\ThursdayTool\UI\Pages\UI_Page.cs" />
     <Compile Include="Assets\ThirdComponent\ThursdayTool\UI\TipTools\TipComponent.cs" />
+    <Compile Include="Assets\ThirdComponent\ThursdayTool\Pool\ObjController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ThirdComponent\ThursdayTool\SourceHanSansCN7000\chinese_Unicode_7000.txt" />
