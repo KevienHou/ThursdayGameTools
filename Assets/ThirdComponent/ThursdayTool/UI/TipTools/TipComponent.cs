@@ -1,9 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using DG.Tweening;
+
 using TMPro;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ThursdayTool.UI
 {
@@ -14,7 +18,7 @@ namespace ThursdayTool.UI
         public float counter;
         private Tweener fadeOut;
         private Tweener fadeIn;
-
+        private RectTransform rectt;
         public string text
         {
             set => t_tip.text = value;
@@ -25,6 +29,7 @@ namespace ThursdayTool.UI
         {
             cg = GetComponent<CanvasGroup>();
             t_tip = GetComponentInChildren<TextMeshProUGUI>();
+            rectt = GetComponent<RectTransform>();
         }
 
         internal void Init(RectTransform rectTransform)
@@ -33,17 +38,18 @@ namespace ThursdayTool.UI
             t_tip = rectTransform.GetComponentInChildren<TextMeshProUGUI>();
         }
 
-        public void Show(string content)
+        public void Show(string content, float counter = 2)
         {
             cg.SetActive(true);
             cg.alpha = 0;
             t_tip.text = content;
-            counter = 2;
+            this.counter = counter;
             fadeOut.Kill();
             fadeIn.Kill();
             fadeIn = cg.DOFade(1, 0.25f);
             isChanging = false;
             fadeIn.onComplete = () => { isChanging = true; };
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectt);
         }
 
         private bool isChanging = false;
